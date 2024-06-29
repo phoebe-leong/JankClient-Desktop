@@ -130,3 +130,4 @@ dist
 .pnp.*
 src-tauri/.DS_Store
 src-tauri/icons/.DS_Store
+.DS_Store
