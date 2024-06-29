@@ -1,6 +1,8 @@
 # Jank Client Desktop
-Jank Client Desktop is a Tauri desktop client for [MathMan05/JankClient](https://github.com/MathMan05/JankClient) with incorporations of my fork [phoebe-leong/JankClient](https://github.com/phoebe-leong/JankClient).
+Jank Client Desktop is a Tauri desktop client for [MathMan05/JankClient](https://github.com/MathMan05/JankClient) with incorporations of my fork [phoebe-leong/JankClient](https://github.com/phoebe-leong/JankClient).  
 
+Please follow [semantic versioning conventions](https://semver.org/).
+  
 ## Building locally
 ### Installing Dependencies
 1. Install NodeJS [here](https://nodejs.org) (this also gives you npm, which we will need to install Tauri).
