@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link href="/style.css" rel="stylesheet" type="text/css" />
+        <link href="/themes.css" rel="stylesheet" type="text/css" id="lightcss"/>
+
+        <link rel="manifest" href="/manifest.json" />
+    </head>
+
+    <body class="Dark-theme">
+    <script src="/login.js"></script>
+    <script src="/contextmenu.js"></script>
+    <script src="/member.js"></script>
+    <script src="/user.js"></script>
+    <script src="/embed.js"></script>
+    <script src="/message.js"></script>
+    <script src="/channel.js"></script>
+    <script src="/permissions.js"></script>
+    <script src="/role.js"></script>
+    <script src="/guild.js"></script>
+    <script src="/direct.js"></script>
+    <script src="/localuser.js"></script>
+    <script src="/markdown.js"></script>
+    <script src="/fullscreen.js"></script>
+    <script src="/audio.js"></script>
+
+    <div id="loading" class="loading"><div id="centerdiv"><img src="/bitmap.svg" width="1in" height="1in"><h1>Jank Client is loading</h1><h2>This shouldn't take long</h2></div></div>
+    <table id="page" cellspacing="0" cellpadding="0">
+        <tr>
+            <td rowspan="2" id="neunence">
+                <div id="servers"></div>
+            </td>
+            <td class="servertd" id="servertd">
+                <h2 id="serverName">Server Name</h2>
+            </td>
+            <td colspan="2" class="servertd servernamediv">
+                <span id="mobileback" hidden=true></span><span id="channelname">Channel</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td id="channels-td">
+                <div id="channels"></div>
+                <table id="userdock">
+                    <tr>
+                        <td>
+                        <table id="userinfo"><tr>
+                        <td>
+                            <img id="userpfp" class="pfp">
+                        </td>
+                        <td>
+                            <div>
+                                <p id="username">USERNAME</p>
+                                <p id="status">SATUS</p>
+                            </div>
+                        </td>
+                        </tr></table></td>
+                        <td>
+                            <h2 id="settings" onclick="userSettings()">⚙</h2>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </td>
+            <td id="channelw">
+                <div id="messagecontainer">
+                <div id="messages">
+                </div>
+                </div>
+                <div id="pasteimage"></div>
+                <div id="typediv">
+                    <textarea id="typebox"></textarea>
+                    <div id="typing" class="hidden">
+                        <p id="typingtext">typing</p>
+                        <div class="loading-indicator">
+                            <span class="dot">.</span>
+                            <span class="dot">.</span>
+                            <span class="dot">.</span>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td id="extra">
+            </td>
+        </tr>
+    </table>
+    <script src="/index.js"></script>
+</body>
+</html>
