@@ -55,10 +55,10 @@
     },
     "windows": [
       {
-        "fullscreen": false,
+        "fullscreen": true,
         "height": 600,
         "resizable": true,
-        "title": "jankclient",
+        "title": "Jank Client",
         "width": 800
       }
     ]
