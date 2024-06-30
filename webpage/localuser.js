@@ -262,12 +262,12 @@ class localuser{
     buildservers(){
         const serverlist=document.getElementById("servers");//
 
-        const div=document.createElement("div");
-        div.textContent="⌂";
-        div.classList.add("home","servericon")
-        div.all=this.guildids["@me"];
-        serverlist.appendChild(div)
-        div.onclick=function(){
+        const img = document.createElement("img");
+        img.src="https://cdn.discordapp.com/attachments/1233873992448999456/1256479431556333578/xRl6LDR.svg?ex=6680eb28&is=667f99a8&hm=eb1791b45bfedd56b85c44e5eb8a3c8b2c141f183d438259641f69559db20ac4&"
+        img.classList.add("home","servericon")
+        img.all=this.guildids["@me"];
+        serverlist.appendChild(img)
+        img.onclick=function(){
             this.all.loadGuild();
             this.all.loadChannel();
         }
@@ -503,10 +503,10 @@ class localuser{
                         thisuser.updatebio(newbio);
                     }
                 }],
-                ["select","Theme:",["Dark","Darker","Light","WHITE"],e=>{
-                    localStorage.setItem("theme",["Dark","Darker","Light","WHITE"][e.target.selectedIndex]);
+                ["select","Theme:",["Dark","Light","WHITE"],e=>{
+                    localStorage.setItem("theme",["Dark","Light","WHITE"][e.target.selectedIndex]);
                     setTheme();
-                },["Dark","Darker","Light","WHITE"].indexOf(localStorage.getItem("theme"))],
+                },["Dark","Light","WHITE"].indexOf(localStorage.getItem("theme"))],
                 ["select","Notification sound:",voice.sounds,e=>{
                     voice.setNotificationSound(voice.sounds[e.target.selectedIndex]);
                     voice.noises(voice.sounds[e.target.selectedIndex]);
