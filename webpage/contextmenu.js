@@ -36,6 +36,7 @@ class contextmenu{
     }
     bind(obj,addinfo){
         obj.addEventListener("contextmenu", (event) => {
+
             event.preventDefault();
             event.stopImmediatePropagation();
             this.makemenu(event.clientX,event.clientY,addinfo,obj)
