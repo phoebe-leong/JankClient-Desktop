@@ -37,7 +37,9 @@ class contextmenu{
     bind(obj,addinfo){
         obj.addEventListener("contextmenu", (event) => {
 
-            event.preventDefault();
+            if (window.navigator.userAgent.indexOf("Mac OS") == -1) {
+                event.preventDefault()
+            }
             event.stopImmediatePropagation();
             this.makemenu(event.clientX,event.clientY,addinfo,obj)
         });
