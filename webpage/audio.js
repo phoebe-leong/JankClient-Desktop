@@ -1,5 +1,8 @@
+var globalVolume = 0.5
+
 class voice{
-    constructor(wave,freq,volume=1){
+    constructor(wave,freq,volume=globalVolume){
+
         this.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         this.info={wave:wave,freq:freq}
         this.playing=false;
@@ -18,6 +21,13 @@ class voice{
         this.source.start();
         this.updateWave(freq);
     }
+    set volume(vol) {
+        this.gainNode.gain.value = vol
+    }
+    get volume() {
+        return this.gainNode.gain.value
+    }
+
     get wave(){
         return this.info.wave;
     }
@@ -32,6 +42,7 @@ class voice{
         this.info.freq=freq;
         this.updateWave()
     }
+
     updateWave(){
         const func=this.waveFucnion();
         for (let i = 0; i < this.buffer.length; i++) {
@@ -103,7 +114,7 @@ class voice{
                     break;
                 }
             case "square":{
-                    const voicy=new voice("square",600,.4);
+                    const voicy=new voice("square",600);
                     voicy.play()
                     setTimeout(_=>{voicy.freq=800},50);
                     setTimeout(_=>{voicy.freq=1000},100);

@@ -222,6 +222,24 @@ class fullscreen{
                 }
                 return table;
             }
+            case "range": {
+                const div = document.createElement("div")
+                var label = document.createElement("label")
+                    label.innerHTML = array[1]
+
+                var range = document.createElement("input")
+                    range.type = "range"
+                    range.min = array[2][0]
+                    range.max = array[2][1]
+
+                    range.defaultValue = (array[2][2] * 100)
+                range.addEventListener("change", array[3])
+
+                div.appendChild(label)
+                div.appendChild(range)
+
+                return div
+            }
             default:
                 console.error("can't find element:"+array[0],"  full element:"+array)
                 return;

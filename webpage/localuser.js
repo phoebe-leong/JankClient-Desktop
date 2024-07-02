@@ -510,7 +510,12 @@ class localuser{
                 ["select","Notification sound:",voice.sounds,e=>{
                     voice.setNotificationSound(voice.sounds[e.target.selectedIndex]);
                     voice.noises(voice.sounds[e.target.selectedIndex]);
-                },voice.sounds.indexOf(voice.getNotificationSound())]
+                },voice.sounds.indexOf(voice.getNotificationSound())],
+                ["range", "Notification volume:", [0, 100, globalVolume], e=> {
+                    globalVolume = (e.srcElement.value / 100).toFixed(1)
+
+                    voice.volume = globalVolume
+                }]
             ],
             ["vdiv",
                 ["html",hypothetcialprofie]
