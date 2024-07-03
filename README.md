@@ -4,7 +4,7 @@ Jank Client Desktop is a Tauri desktop client for [MathMan05/JankClient](https:/
 Please follow [semantic versioning conventions](https://semver.org/).  
 
 > **Jank Client Desktop is currently only tested on MacOS.**  
-> **If you would like to test on different machines (e.g., Linux, Windows, FreeBSD, TempleOS, whatever...), please make an issue.**
+> **If you would like to help test new code on different machines (e.g., Linux, Windows, FreeBSD, TempleOS, whatever...), please make an issue.**
   
 ## Building locally
 ### Installing Dependencies
