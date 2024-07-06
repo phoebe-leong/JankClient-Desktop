@@ -13,7 +13,7 @@ class Cleaner {
 	}
 
 	start() {
-		setInterval(() => {
+		this.job = setInterval(() => {
 			console.clear()
 		}, this.interval)
 
@@ -22,10 +22,8 @@ class Cleaner {
 
 	stop() {
 		clearInterval(this.job)
-		this.job = null
-
 		console.log("Cleaner stopped...")
 	}
 }
-const cleaner = new Cleaner()
+const cleaner = new Cleaner(5000)
 cleaner.start()
