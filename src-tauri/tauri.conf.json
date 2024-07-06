@@ -1,8 +1,8 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
-    "beforeBuildCommand": "",
-    "beforeDevCommand": "node index.js",
+    "beforeBuildCommand": "node storage.js",
+    "beforeDevCommand": "node storage.js && node index.js",
     "devPath": "http://127.0.0.1:8080",
     "distDir": "../webpage"
   },

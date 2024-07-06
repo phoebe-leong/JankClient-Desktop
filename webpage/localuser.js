@@ -6,6 +6,7 @@ class localuser{
         this.initialized=false;
         this.headers={"Content-type": "application/json; charset=UTF-8",Authorization:this.userinfo.token};
     }
+
     gottenReady(ready){
         this.usersettings=null;
         this.initialized=true;
@@ -503,10 +504,10 @@ class localuser{
                         thisuser.updatebio(newbio);
                     }
                 }],
-                ["select","Theme:",["Dark","Darker","Light","WHITE"],e=>{
-                    localStorage.setItem("theme",["Dark","Darker","Light","WHITE"][e.target.selectedIndex]);
+                ["select","Theme:",["Dark", "Darker", "Light", "WHITE"],e=>{
+                    localStorage.setItem("theme",["Dark", "Darker", "Light", "WHITE"][e.target.selectedIndex]);
                     setTheme();
-                },["Dark","Darker","Light","WHITE"].indexOf(localStorage.getItem("theme"))],
+                },["Dark", "Darker", "Light", "WHITE"].indexOf(localStorage.getItem("theme"))],
                 ["select","Notification sound:",voice.sounds,e=>{
                     voice.setNotificationSound(voice.sounds[e.target.selectedIndex]);
                     voice.noises(voice.sounds[e.target.selectedIndex]);

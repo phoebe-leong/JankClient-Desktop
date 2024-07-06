@@ -8,6 +8,11 @@ app.use("/getupdates",(req, res) => {
     const out=fs.statSync(`${__dirname}/webpage`);
     res.send(out.mtimeMs+"");
 });
+
+app.get("/themes.json", (req, res) => {
+    res.sendFile("./webpage/themes/themes.json", {root: __dirname})
+})
+
 let debugging=true;//Do not turn this off, the service worker is all kinds of jank as is, it'll really mess your day up if you disable this
 app.use('/', (req, res) => {
     if(debugging&&req.path.startsWith("/service.js")){
@@ -16,15 +21,14 @@ app.use('/', (req, res) => {
     }
     if(fs.existsSync(`${__dirname}/webpage${req.path}`)) {
         res.sendFile(`./webpage${req.path}`, {root: __dirname});
-    }
-    else if(fs.existsSync(`${__dirname}/webpage${req.path}.html`)) {
+    } else if (fs.existsSync(`${__dirname}/webpage/themes${req.path}`)) {
+        res.sendFile(`./webpage/themes${req.path}`, {root: __dirname})
+    } else if(fs.existsSync(`${__dirname}/webpage${req.path}.html`)) {
         res.sendFile(`./webpage${req.path}.html`, {root: __dirname});
-    }
-    else {
+    } else {
         res.sendFile("./webpage/index.html", {root: __dirname});
     }
 });
-
 
 const PORT = process.env.PORT || +process.argv[1] || 8080;
 app.listen(PORT, () => {});
