@@ -17,12 +17,14 @@ class Cleaner {
 			console.clear()
 		}, this.interval)
 
-		console.log("Beginning work...")
+		console.log("Cleaner starting...")
 	}
 
 	stop() {
 		clearInterval(this.job)
 		this.job = null
+
+		console.log("Cleaner stopped...")
 	}
 }
 const cleaner = new Cleaner()
