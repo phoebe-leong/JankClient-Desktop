@@ -194,7 +194,7 @@ class channel{
 
                 const previousChannel = document.querySelector("#selectedchannel")
                 if (previousChannel != null) {
-                    previousChannel.id = undefined
+                    previousChannel.id = ""
                 }
                 div.id = "selectedchannel"
             }
