@@ -191,6 +191,12 @@ class channel{
             div.myinfo=this;
             div.onclick=function(){
                 this.myinfo.getHTML();
+
+                const previousChannel = document.querySelector("#selectedchannel")
+                if (previousChannel != null) {
+                    previousChannel.id = undefined
+                }
+                div.id = "selectedchannel"
             }
         }
         return div;

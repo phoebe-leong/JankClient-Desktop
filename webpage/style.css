@@ -530,6 +530,10 @@ textarea {
 	background-color: var(--channel-hover);
 }
 
+#selectedchannel {
+	background-color: var(--channel-hover);
+}
+
 .channel {
 	user-select: none;
 	cursor: pointer;
