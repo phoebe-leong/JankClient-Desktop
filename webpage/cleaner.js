@@ -26,4 +26,4 @@ class Cleaner {
 	}
 }
 const cleaner = new Cleaner(5000)
-cleaner.start()
+//cleaner.start()
