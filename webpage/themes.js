@@ -2,16 +2,20 @@ class Themes {
 	constructor() {
 		this.fetched = false
 		this.themeData = undefined
+		this.themeOptions = []
 	}
 
 	get isFetched() {
 		return this.fetched
 	}
 
+	get themeOpts() {
+		return this.themeOptions
+	}
+
 	async fetchThemes() {
 		this.themeData = await fetch("http://127.0.0.1:8080/themes.json")
 			.then((data) => data.json())
-			//.then(() => { this.fetched = true })
 		this.fetched = true
 	}
 
@@ -23,7 +27,6 @@ class Themes {
 				link.href = this.themeData.files[i].path
 			document.querySelector("head").appendChild(link)
 		}
-		console.log(this.themeData)
 	}
 
 	async updateSelectionOptions() {
@@ -31,7 +34,7 @@ class Themes {
 		for (let i = 0; i < this.themeData.files.length; i++) {
 			options.push(this.themeData.files[i].name)
 		}
-		return options
+		this.themeOptions = options
 	}
 }
 const themes = new Themes()
@@ -42,10 +45,9 @@ const themeAction = setInterval(() => {
 
             if (themes.isFetched) {
                 themes.addStyleLinks()
-                this.themeOptions = themes.updateSelectionOptions()
+                themes.updateSelectionOptions()
                 clearInterval(themeAction)
 
-                console.log(this.themeData)
                 console.log("themeAction done")
             }
         }, 100)

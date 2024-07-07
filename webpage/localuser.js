@@ -504,10 +504,10 @@ class localuser{
                         thisuser.updatebio(newbio);
                     }
                 }],
-                ["select","Theme:",["Dark", "Darker", "Light", "WHITE"],e=>{
-                    localStorage.setItem("theme",["Dark", "Darker", "Light", "WHITE"][e.target.selectedIndex]);
+                ["select","Theme:",themes.themeOpts,e=>{
+                    localStorage.setItem("theme",themes.themeOpts[e.target.selectedIndex]);
                     setTheme();
-                },["Dark", "Darker", "Light", "WHITE"].indexOf(localStorage.getItem("theme"))],
+                },themes.themeOpts.indexOf(localStorage.getItem("theme"))],
                 ["select","Notification sound:",voice.sounds,e=>{
                     voice.setNotificationSound(voice.sounds[e.target.selectedIndex]);
                     voice.noises(voice.sounds[e.target.selectedIndex]);
