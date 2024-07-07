@@ -71,7 +71,17 @@ const checkStorage = async () => {
 checkStorage()
 
 const copyOver = async () => {
-	var path = getPath("--theme")
+	const path = getPath("--theme")
+	const localPath = `${__dirname}/webpage/themes/`
+
+	const webpageFiles = await fs.promises.readdir(localPath)
+	for (const file of webpageFiles) {
+		const fileType = await fs.promises.stat(`${localPath}${file}`)
+
+		if (fileType.isFile() && pathModule.extname(file) == ".css") {
+			fs.unlinkSync(`${localPath}/${file}`)
+		}
+	}
 
 	if (path != -1) {
 		const files = await fs.promises.readdir(path)
@@ -80,7 +90,7 @@ const copyOver = async () => {
 			const isFile = (await fs.promises.stat(`${path}${file}`)).isFile()
 
 			if (isFile && pathModule.extname(file) == ".css") {
-				fs.copyFileSync(`${path}${file}`, `./webpage/themes/${file}`)
+				fs.copyFileSync(`${path}${file}`, `${localPath}${file}`)
 			}
 		}
 	}
